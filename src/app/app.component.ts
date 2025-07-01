@@ -12,4 +12,13 @@ import { ProfileComponent } from './profile/profile.component';
 })
 export class AppComponent {
   protected title = 'angular-tut';
+
+  handleClickEvent(){
+    console.log("Fuction Called");
+    this.otherFuction();
+  }
+
+  otherFuction(){
+    console.log("Other fn Called");
+  }
 }
