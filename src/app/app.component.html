@@ -5,7 +5,15 @@
 <!-- <app-signup></app-signup> -->
 <!-- <app-profile></app-profile> -->
 
-<h1>Fn Call on Button Click</h1>
+<!-- <h1>Fn Call on Button Click</h1>
 <button (click)="handleClickEvent()">Click Me!</button>
 
-<button (click)="handleSum(10,20)">Sum</button>
+<button (click)="handleSum(10,20)">Sum</button> -->
+
+<h1>Counter App</h1>
+<div>
+    <h2>{{count}}</h2>
+    <button (click)="handleCounter('minus')">Decrement</button>
+    <button (click)="handleCounter('reset')">Reset</button>
+    <button (click)="handleCounter('plus')">Increment</button>
+</div>

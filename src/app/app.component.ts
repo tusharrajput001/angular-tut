@@ -10,6 +10,23 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  count: number = 0;
+
+  handleCounter(val: string) {
+    if (val == 'minus') {
+      if(this.count <= 1){
+        this.count = 0;
+      }
+      else{
+        this.count = this.count - 1;
+      }
+    } else if (val == 'plus') {
+      this.count = this.count + 1;
+    } else {
+      this.count = 0;
+    }
+  }
+
   protected title = 'angular-tut';
 
   handleClickEvent() {
@@ -32,7 +49,7 @@ export class AppComponent {
     this.other = 12;
   }
 
-  handleSum(a:number,b:number){
-    console.log(a+b);
+  handleSum(a: number, b: number) {
+    console.log(a + b);
   }
 }
