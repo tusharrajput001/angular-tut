@@ -10,6 +10,22 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  name:string = "";
+  displayName = "";
+
+  getName(event:Event){
+    const name = (event.target as HTMLInputElement).value;
+    this.name = name;
+  }
+
+  showName(){
+    this.displayName = this.name;
+  }
+
+  setName(){
+    this.name = "Tushar"
+  }
+
   count: number = 0;
 
   handleCounter(val: string) {
@@ -38,7 +54,7 @@ export class AppComponent {
     console.log('Other fn Called');
   }
 
-  name = 'Tushar';
+  // name = 'Tushar';
   data: string | number = 'Hello';
   other: any = true;
 
