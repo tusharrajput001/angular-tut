@@ -18,12 +18,41 @@
     <button (click)="handleCounter('plus')">Increment</button>
 </div> -->
 
-
-<h1>Get and set input feild</h1>
+<!-- <h1>Get and set input feild</h1>
 <input type="text" value="{{name}}" (input)="getName($event)" placeholder="Enter user name"><br><br>
 <button (click)="showName()">Get Value</button>
 <button (click)="setName()">Set Value</button>
 
 <br>
 
-<h2>{{displayName}}</h2>
+<h2>{{displayName}}</h2> -->
+
+<!-- <h1>If Else | control flow</h1>
+
+<button (click)="toogleDiv()">
+  {{ display ? "Hide Div" : "Show Div" }} -->
+
+<!-- @if(display){Hide Div}@else{Show Div} -->
+<!-- </button>
+
+@if(display){
+<div style="width: 200px; height: 200px; background-color: teal"></div>
+} -->
+
+<h1>Else if | control flow</h1>
+
+<button (click)="handleColor(1)">Red</button>
+<button (click)="handleColor(2)">yellow</button>
+<button (click)="handleColor(3)">Green</button>
+<button (click)="handleColor(4)">Other</button>
+<input type="text" (input)="handleInput($event)" placeholder="Enter Color number">
+
+@if(color == 1){
+<div style="background-color: red; width: 100px; height: 100px"></div>
+} @else if(color == 2){
+<div style="background-color: yellow; width: 100px; height: 100px"></div>
+} @else if(color == 3){
+<div style="background-color: green; width: 100px; height: 100px"></div>
+} @else{
+<div style="background-color: black; width: 100px; height: 100px"></div>
+}

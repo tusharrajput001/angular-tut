@@ -10,6 +10,20 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+
+  color = 1;  
+
+  display = true;
+
+  handleColor(val:number){
+    this.color = val;
+  }
+
+  handleInput(event:Event){
+    this.color = parseInt((event.target as HTMLInputElement).value);
+  }
+
+
   name:string = "";
   displayName = "";
 
@@ -24,6 +38,10 @@ export class AppComponent {
 
   setName(){
     this.name = "Tushar"
+  }
+
+  toogleDiv(){
+    this.display = !this.display;
   }
 
   count: number = 0;
