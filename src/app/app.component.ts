@@ -10,37 +10,44 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  users = ['Tushar', 'ujjwal', 'Kunal', 'Ayush', 'Mayank'];
+  students = [
+    { name: 'Tushar', age: 23, address: 'Delhi' },
+    { name: 'ujjwal', age: 23, address: 'UP' },
+    { name: 'Kunal', age: 23, address: 'Delhi' },
+    { name: 'Ayush', age: 23, address: 'UP' },
+    { name: 'Mayank', age: 23, address: 'UP' },
+  ];
 
-  color = 1;  
+  color = 1;
 
   display = true;
 
-  handleColor(val:number){
+  handleColor(val: number) {
     this.color = val;
   }
 
-  handleInput(event:Event){
+  handleInput(event: Event) {
     this.color = parseInt((event.target as HTMLInputElement).value);
   }
 
+  name: string = '';
+  displayName = '';
 
-  name:string = "";
-  displayName = "";
-
-  getName(event:Event){
+  getName(event: Event) {
     const name = (event.target as HTMLInputElement).value;
     this.name = name;
   }
 
-  showName(){
+  showName() {
     this.displayName = this.name;
   }
 
-  setName(){
-    this.name = "Tushar"
+  setName() {
+    this.name = 'Tushar';
   }
 
-  toogleDiv(){
+  toogleDiv() {
     this.display = !this.display;
   }
 
@@ -48,10 +55,9 @@ export class AppComponent {
 
   handleCounter(val: string) {
     if (val == 'minus') {
-      if(this.count <= 1){
+      if (this.count <= 1) {
         this.count = 0;
-      }
-      else{
+      } else {
         this.count = this.count - 1;
       }
     } else if (val == 'plus') {

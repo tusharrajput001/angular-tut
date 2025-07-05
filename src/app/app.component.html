@@ -39,7 +39,7 @@
 <div style="width: 200px; height: 200px; background-color: teal"></div>
 } -->
 
-<h1>Else if | control flow</h1>
+<!-- <h1>Else if | control flow</h1>
 
 <button (click)="handleColor(1)">Red</button>
 <button (click)="handleColor(2)">yellow</button>
@@ -55,4 +55,17 @@
 <div style="background-color: green; width: 100px; height: 100px"></div>
 } @else{
 <div style="background-color: black; width: 100px; height: 100px"></div>
+} -->
+
+
+<h1>For Loops in ng</h1>
+
+<!-- @for(item of users; track item){
+  <h2>{{item}}</h2>
+} -->
+
+@for(item of students; track item){
+  <h2>{{item.name}}</h2>
+  <h2>{{item.age}}</h2>
+  <h2>{{item.address}}</h2>
 }
