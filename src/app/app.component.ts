@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { ProfileComponent } from './profile/profile.component';
@@ -10,6 +10,24 @@ import { ProfileComponent } from './profile/profile.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  cnt = signal(10);
+  x:number = 20;
+
+  constructor() {
+    effect(() => {
+      console.log(this.cnt());
+      console.log(this.x);
+    });
+  }
+
+  updateVal() {
+    this.cnt.set(this.cnt() + 1);
+  }
+
+  updateX() {
+    this.x = this.x + 1;
+  }
+
   users = ['Tushar', 'ujjwal', 'Kunal', 'Ayush', 'Mayank'];
   students = [
     { name: 'Tushar', age: 23, address: 'Delhi' },
