@@ -103,8 +103,9 @@
 
 <h1>{{name}}</h1> -->
 
-<h1>ToDo List</h1>
+<!-- <h1>ToDo List</h1>
 <input [(ngModel)]="task" type="text" placeholder="Enter Task" />
+
 
 <button (click)="addTask()">Add Task</button>
 
@@ -115,4 +116,28 @@
     <li>{{item.task}}</li>
     <li><button (click)="deleteTask(item.id)">Delete</button></li>
   </ul>
-}
+} -->
+
+<!-- <h1 [style.backgroundColor]="bgColor" [style.fontSize]="fontSize">
+  Dynamic style
+</h1>
+
+
+<h1 [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall" >Heading</h1>
+<button (click)="updateSize()">Click</button> -->
+<!-- 
+<h1 *ngIf="show">Heading tag</h1>
+
+<ul>
+  <li *ngFor="let item of students">{{item.name}},{{item.age}}</li>
+</ul> -->
+
+<h1>*ngIf Directives</h1>
+
+<div *ngIf="login; else elseBlock">
+  <a href="">Logout</a>
+</div>
+<ng-template #elseBlock>
+  <a href="">Login</a>
+</ng-template>
+

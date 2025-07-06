@@ -3,22 +3,46 @@ import { Login } from './login/login';
 import { Signup } from './signup/signup';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
+
 @Component({
   selector: 'app-root',
-  imports: [Login, Signup, ProfileComponent, FormsModule],
+  imports: [Login, Signup, ProfileComponent, FormsModule, NgIf, NgFor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  task = '';
-  taskList: { id: number; task: string }[] = [];
-  addTask() {
-    this.taskList.push({ id: this.taskList.length + 1, task: this.task });
-    this.task = '';
-  }
-  deleteTask(taskId:number) {
-    this.taskList = this.taskList.filter((item) => item.id !== taskId);
-  }
+
+  login = false;
+  
+
+
+
+
+  // show = true;
+
+  // bgColor = "red";
+  // fontSize = "40px";
+
+  // headingSizeBig = "80px";
+  // headingSizeSmall = "30px";
+
+  // zoom = true;
+
+  // updateSize(){
+  //   this.zoom = !this.zoom;
+  // }
+
+
+  // task = '';
+  // taskList: { id: number; task: string }[] = [];
+  // addTask() {
+  //   this.taskList.push({ id: this.taskList.length + 1, task: this.task });
+  //   this.task = '';
+  // }
+  // deleteTask(taskId:number) {
+  //   this.taskList = this.taskList.filter((item) => item.id !== taskId);
+  // }
   // name = 'Tushar';
   // x=signal(10);
   // y=signal(20);
@@ -56,13 +80,13 @@ export class AppComponent {
 
   // users = ['Tushar', 'ujjwal', 'Kunal', 'Ayush', 'Mayank'];
   // users = [];
-  //   students = [
-  //     { name: 'Tushar', age: 23, address: 'Delhi' },
-  //     { name: 'ujjwal', age: 23, address: 'UP' },
-  //     { name: 'Kunal', age: 23, address: 'Delhi' },
-  //     { name: 'Ayush', age: 23, address: 'UP' },
-  //     { name: 'Mayank', age: 23, address: 'UP' },
-  //   ];
+    students = [
+      { name: 'Tushar', age: 23, address: 'Delhi' },
+      { name: 'ujjwal', age: 23, address: 'UP' },
+      { name: 'Kunal', age: 23, address: 'Delhi' },
+      { name: 'Ayush', age: 23, address: 'UP' },
+      { name: 'Mayank', age: 23, address: 'UP' },
+    ];
 
   //   color = 1;
 
