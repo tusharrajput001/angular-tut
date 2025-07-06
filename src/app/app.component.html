@@ -132,12 +132,15 @@
   <li *ngFor="let item of students">{{item.name}},{{item.age}}</li>
 </ul> -->
 
-<h1>*ngIf Directives</h1>
+<!-- <h1>*ngIf Directives</h1>
 
 <div *ngIf="login; else elseBlock">
   <a href="">Logout</a>
 </div>
 <ng-template #elseBlock>
   <a href="">Login</a>
-</ng-template>
+</ng-template> -->
 
+<app-header></app-header>
+
+<router-outlet />
