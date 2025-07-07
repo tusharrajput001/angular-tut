@@ -140,7 +140,24 @@
 <ng-template #elseBlock>
   <a href="">Login</a>
 </ng-template> -->
-
+<!-- 
 <app-header></app-header>
 
-<router-outlet />
+<router-outlet /> -->
+
+<h1>Basic of React Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="enter Name" formControlName="name" />
+  <span *ngIf="name?.hasError('required')" style="color: red">*</span>
+  <span
+    *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+    style="color: red"
+    >Please enter username</span
+  >
+  <br />
+  <input type="text" placeholder="enter Password" formControlName="password" />
+  <br />
+  <input type="text" placeholder="enter Email" formControlName="email" />
+  <br />
+  <button>Submit</button>
+</form>
