@@ -1,4 +1,4 @@
-<!-- <h1>Hello</h1> -->
+<h1>Hello</h1>
 <!-- interpolation -->
 <!-- <h1>{{title}}</h1> -->
 <!-- <login></login> -->
@@ -145,7 +145,7 @@
 
 <router-outlet /> -->
 
-<h1>Basic of React Forms</h1>
+<!-- <h1>Basic of React Forms</h1>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <input type="text" placeholder="enter Name" formControlName="name" />
   <span *ngIf="name?.hasError('required')" style="color: red">*</span>
@@ -160,4 +160,24 @@
   <input type="text" placeholder="enter Email" formControlName="email" />
   <br />
   <button>Submit</button>
+</form> -->
+
+<h1>Template Driven Forms</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input #name="ngModel" type="text" required placeholder="Enter name" name="name" ngModel>
+  <span *ngIf="name.invalid && name.touched" style="color: red;">*</span><br><br>
+  <input #password="ngModel" required type="password" minlength="5" placeholder="Enter password" name="password" ngModel >
+  <span *ngIf="password.invalid && password.touched" style="color: red;">*</span><br><br>
+
+  <select name="gender" ngModel >
+    <option value="">Select gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select><br><br> 
+  <input type="range" min="0" max="20" name="range" ngModel>
+  <br><br>
+  <button [disabled]="userForm.invalid">Add User</button>
 </form>
+
+

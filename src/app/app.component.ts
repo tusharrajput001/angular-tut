@@ -6,39 +6,46 @@ import { Component } from '@angular/core';
 // import { NgFor, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, ReactiveFormsModule, NgIf],
+  imports: [FormsModule, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
 
-  profileForm = new FormGroup({
-    name: new FormControl('',[Validators.required]),
-    password: new FormControl('',[Validators.required,Validators.minLength(5)]),
-    email: new FormControl('',[Validators.required, Validators.maxLength(50)]),
-  });
-
-  onSubmit() {
-    console.log(this.profileForm.value);
-  }
-
-  get name(){
-    return this.profileForm.get('name');
-  }
-
-    get email(){
-    return this.profileForm.get('email');
+  addDetails(val:NgForm){
+    console.log(val);
   }
 
 
-    get password(){
-    return this.profileForm.get('password');
-  }
+
+
+  // profileForm = new FormGroup({
+  //   name: new FormControl('',[Validators.required]),
+  //   password: new FormControl('',[Validators.required,Validators.minLength(5)]),
+  //   email: new FormControl('',[Validators.required, Validators.maxLength(50)]),
+  // });
+
+  // onSubmit() {
+  //   console.log(this.profileForm.value);
+  // }
+
+  // get name(){
+  //   return this.profileForm.get('name');
+  // }
+
+  //   get email(){
+  //   return this.profileForm.get('email');
+  // }
+
+
+  //   get password(){
+  //   return this.profileForm.get('password');
+  // }
 
   // name = new FormControl();
   // password = new FormControl();
