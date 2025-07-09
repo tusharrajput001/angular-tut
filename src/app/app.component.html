@@ -162,7 +162,7 @@
   <button>Submit</button>
 </form> -->
 
-<h1>Template Driven Forms</h1>
+<!-- <h1>Template Driven Forms</h1>
 
 <form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
   <input #name="ngModel" type="text" required placeholder="Enter name" name="name" ngModel>
@@ -178,6 +178,22 @@
   <input type="range" min="0" max="20" name="range" ngModel>
   <br><br>
   <button [disabled]="userForm.invalid">Add User</button>
-</form>
+</form> -->
 
 
+<!-- <h1>Pass data to child component</h1>
+<app-user [user]="selectedUser.value" ></app-user>
+
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+  <option value="Tushar">Tushar</option>
+  <option value="Sam">Sam</option>
+  <option value="Ayush">Ayush</option>
+  <option value="Tony">Tony</option>
+</select> -->
+
+
+
+<h1>Custom Pipe in Angular</h1>
+
+<h1>₹{{amount | currencyConvertor}}</h1>
+<h1>₹{{amount | currencyConvertor:12}}</h1>

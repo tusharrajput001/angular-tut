@@ -8,14 +8,26 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { User } from './user/user';
+import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, User,CurrencyConvertorPipe ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+
+
+  amount = 10;
+
+  userName = "Bruce Wayne"
+
+  onUserChange(user:string){
+    this.userName = user;
+
+  }
 
   addDetails(val:NgForm){
     console.log(val);
