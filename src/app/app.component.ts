@@ -14,29 +14,28 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { NgIf } from '@angular/common';
+// import { NgIf } from '@angular/common';
 import { User } from './user/user';
-import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
+// import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
 import { Product } from './services/product';
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, NgIf, User, CurrencyConvertorPipe],
+  imports: [FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  productData:{
-    name:string,
-    branch:string,
-    price:string
-  }[] | undefined;
 
+  productList: any;
   constructor(private productService: Product) {}
 
-  getProductData(){
-    this.productData = this.productService.getProductData();
-    console.log(this.productData);
+  ngOnInit() {
+    this.productService.getProductList().subscribe((data: any) => {
+      console.log(data);
+      this.productList = data.products;
+    });
   }
+
 
   // amount = 10;
 

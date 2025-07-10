@@ -180,7 +180,6 @@
   <button [disabled]="userForm.invalid">Add User</button>
 </form> -->
 
-
 <!-- <h1>Pass data to child component</h1>
 <app-user [user]="selectedUser.value" ></app-user>
 
@@ -191,12 +190,18 @@
   <option value="Tony">Tony</option>
 </select> -->
 
-
-
 <!-- <h1>Custom Pipe in Angular</h1>
 
 <h1>₹{{amount | currencyConvertor}}</h1>
 <h1>₹{{amount | currencyConvertor:12}}</h1> -->
 
+<button (click)="getProductList()">Load Data</button>
 
-<button (click)="getProductData()" >Load Data</button>
+@for(item of productList; track item){
+<ul>
+  <li>{{ item.title }}</li>
+  <li>{{ item.price }}</li>
+  <li>{{ item.brand }}</li>
+  <li>{{ item.sku }}</li>
+</ul>
+}
