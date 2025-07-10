@@ -6,35 +6,50 @@ import { Component } from '@angular/core';
 // import { NgFor, NgIf } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './header/header';
-import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { User } from './user/user';
 import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
-
+import { Product } from './services/product';
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, NgIf, User,CurrencyConvertorPipe ],
+  imports: [FormsModule, NgIf, User, CurrencyConvertorPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  productData:{
+    name:string,
+    branch:string,
+    price:string
+  }[] | undefined;
 
+  constructor(private productService: Product) {}
 
-  amount = 10;
-
-  userName = "Bruce Wayne"
-
-  onUserChange(user:string){
-    this.userName = user;
-
+  getProductData(){
+    this.productData = this.productService.getProductData();
+    console.log(this.productData);
   }
 
-  addDetails(val:NgForm){
-    console.log(val);
-  }
+  // amount = 10;
 
+  // userName = "Bruce Wayne"
 
+  // onUserChange(user:string){
+  //   this.userName = user;
 
+  // }
+
+  // addDetails(val:NgForm){
+  //   console.log(val);
+  // }
 
   // profileForm = new FormGroup({
   //   name: new FormControl('',[Validators.required]),
@@ -53,7 +68,6 @@ export class AppComponent {
   //   get email(){
   //   return this.profileForm.get('email');
   // }
-
 
   //   get password(){
   //   return this.profileForm.get('password');
